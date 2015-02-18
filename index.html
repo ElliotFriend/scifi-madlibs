@@ -71,15 +71,23 @@
         </script>
 
         <script>
+            // Show all the invisible stuff, so someone can read their story
             $('.madlib').click(function() {
                 $('.invisible').css('visibility', 'visible');
             });
+            // Hide all the invisible stuff again, empty all fields
             $('.restart').click(function() {
                 $('.invisible').css('visibility', 'hidden');
+                $('input').val('');
             });
+            // Pull up the print dialog
             $('.print').click(function() {
                 //$('article').print();
                 window.print();
+            });
+            // Reload the page to get another random story
+            $('.random').click(function() {
+                location.reload();
             });
         </script>
 
