@@ -143,6 +143,10 @@ h1 {
     display: inline;
 }
 
+h2 {
+    display: inline;
+}
+
 p.intro,
 article {
     margin: 20px 0;
@@ -152,7 +156,12 @@ article {
 }
 
 article {
+    padding: 20px;
     font-family: 'Ubuntu Mono';
+}
+
+cite {
+    float: right;
 }
 
 .container {

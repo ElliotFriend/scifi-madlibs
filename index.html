@@ -26,15 +26,21 @@
             <div class="container">
                 <h1>Sci-Fi Mad Libs</h1>
                 <ul>
-                    <li><a href="#">Print this Mad Lib</a></li>
-                    <li><a href="#">Random Mad Lib</a></li>
+                    <li><a href="#"class="print">Print this Mad Lib</a></li>
+                    <li><a href="#" class="random">Random Mad Lib</a></li>
                 </ul>
             </div>
         </header>
 
         <div class="container">
             <p class="intro">I like to write science fiction sometimes. I also like to give people a chance to be creative themselves. Here you go!</p>
-            <article>Grumpy wizards make toxic brew for the evil Queen and Jack.</div>
+            <article>
+                <h2></h2>
+                <cite></cite>
+                <div class="content"></div>
+            </article>
+            <button class="madlib">Libify this!</button>
+            <button class="restart">Start over!</button>
         </div>
 
         <footer>
@@ -55,10 +61,25 @@
         <script>
             (function() {
                 $.getJSON('js/stories.js', function(data) {
-                    //alert(data.stories[0]);
-                    $('article').load(data.stories[0].url);
+                    // Grab a random story to display
+                    var story = data.stories[Math.floor(Math.random() * data.stories.length)];
+                    $('div.content').load(story.url);
+                    $('h2').text(story.title);
+                    $('cite').html('<a href="https://twitter.com/' + story.author + '" rel="author">@' + story.author + '</a>');
                 });
             })();
+        </script>
+
+        <script>
+            $('.madlib').click(function() {
+                $('.invisible').css('visibility', 'visible');
+            });
+            $('.restart').click(function() {
+                $('.invisible').css('visibility', 'hidden');
+            });
+            $('.print').click(function() {
+                $('article').print();
+            });
         </script>
 
         <script>
