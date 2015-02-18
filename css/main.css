@@ -96,12 +96,68 @@ textarea {
    ========================================================================== */
 
 body {
-    max-width: 640px;
-    margin: 0 auto;
+    background: #ddd;
+}
+
+header {
+    background: #999;
 }
 
 h1 {
     font-family: Rokkitt;
+}
+
+footer {
+    background: #1a1a1a;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+header ul,
+footer ul {
+    list-style-type: none;
+    display: inline;
+}
+
+header li,
+footer li {
+    float: right;
+    margin: 10px;
+    padding: 0 10px;
+}
+
+header a,
+footer a {
+    text-decoration: none;
+    color: #eee;
+}
+
+footer small {
+    color: #eee;
+    margin-top: 10px;
+}
+
+h1 {
+    font-size: 42px;
+    display: inline;
+}
+
+p.intro,
+article {
+    margin: 20px 0;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+}
+
+article {
+    font-family: 'Ubuntu Mono';
+}
+
+.container {
+    max-width: 640px;
+    margin: 0 auto;
 }
 
 /* ==========================================================================

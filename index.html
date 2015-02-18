@@ -11,6 +11,7 @@
         <!-- Place favicon.ico in the root directory -->
 
         <link href='//fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Ubuntu+Mono' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
@@ -21,13 +22,44 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <h1>Sci-Fi Mad Libs</h1>
-        <p>I like to write some science fiction. I also like to give people a chance to be creative. Here you go!</p>
+        <header>
+            <div class="container">
+                <h1>Sci-Fi Mad Libs</h1>
+                <ul>
+                    <li><a href="#">Print this Mad Lib</a></li>
+                    <li><a href="#">Random Mad Lib</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div class="container">
+            <p class="intro">I like to write science fiction sometimes. I also like to give people a chance to be creative themselves. Here you go!</p>
+            <article>Grumpy wizards make toxic brew for the evil Queen and Jack.</div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <small>Copyright &copy; 2015 Elliot Voris</small>
+                <ul>
+                    <li><a href="https://github.com/ElliotFriend/scifi-madlibs">Fork Me on GitHub</a></li>
+                    <li><a href="https://twitter.com/ElliotFriend">Tweet at Me!</a></li>
+                </ul>
+            </div>
+        </footer>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
+
+        <script>
+            (function() {
+                $.getJSON('js/stories.js', function(data) {
+                    //alert(data.stories[0]);
+                    $('article').load(data.stories[0].url);
+                });
+            })();
+        </script>
 
         <script>
             (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -37,5 +69,6 @@
             r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
             ga('create','UA-59834935-2','auto');ga('send','pageview');
         </script>
+
     </body>
 </html>
